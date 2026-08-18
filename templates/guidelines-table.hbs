@@ -1,0 +1,133 @@
+<form class='blmt-guidelines-form' autocomplete='off'>
+  <header class='blmt-guidelines-header'>
+    <div class='blmt-guidelines-title'>
+      <div class='blmt-guidelines-name'>
+        {{localize 'boss-loot-monster-tools.Guidelines.HeaderTitle'}}
+      </div>
+      <div class='blmt-guidelines-subtitle'>
+        {{localize 'boss-loot-monster-tools.Guidelines.HeaderSubtitle'}}
+      </div>
+    </div>
+    <div class='blmt-guidelines-actions'>
+      <button type='submit' data-action='save'>
+        <i class='fas fa-save'></i>
+        {{localize 'boss-loot-monster-tools.Guidelines.SaveButton'}}
+      </button>
+      <button type='button' data-action='reset'>
+        <i class='fas fa-undo'></i>
+        {{localize 'boss-loot-monster-tools.Guidelines.ResetButton'}}
+      </button>
+      <button type='button' data-action='import'>
+        <i class='fas fa-file-import'></i>
+        {{localize 'boss-loot-monster-tools.Guidelines.Import.ButtonOk'}}
+      </button>
+      <button type='button' data-action='export'>
+        <i class='fas fa-file-export'></i>
+        {{localize 'boss-loot-monster-tools.Guidelines.ExportButton'}}
+      </button>
+    </div>
+    <div class='blmt-guidelines-note'>
+      <button type='button' data-action='license'>
+        <i class='fas fa-circle-info'></i>
+        {{localize 'boss-loot-monster-tools.Guidelines.NoteButton'}}
+      </button>
+    </div>
+  </header>
+
+  <div class='blmt-guidelines-table-wrap'>
+    <table class='blmt-guidelines-table'>
+      <thead>
+        <tr>
+          <th rowspan='2'>{{localize 'boss-loot-monster-tools.Guidelines.Column.CR'}}</th>
+          <th rowspan='2'>
+            {{localize 'boss-loot-monster-tools.Guidelines.Column.Prof'}}<br />
+          </th>
+          <th rowspan='2'>
+            {{localize 'boss-loot-monster-tools.Guidelines.Column.Ability'}}<br />{{localize
+              'boss-loot-monster-tools.Guidelines.Column.Scores'
+            }}
+          </th>
+          <th rowspan='2'>
+            {{localize 'boss-loot-monster-tools.Guidelines.Column.Damage'}}<br />{{localize
+              'boss-loot-monster-tools.Guidelines.Column.DiceScale'
+            }}
+          </th>
+          <th rowspan='2'>{{localize 'boss-loot-monster-tools.Guidelines.Column.AC'}}</th>
+          <th colspan='3'>{{localize 'boss-loot-monster-tools.Guidelines.Column.HP'}}</th>
+          <th rowspan='2'>
+            {{localize 'boss-loot-monster-tools.Guidelines.Column.AtkBonus'}}<br />
+          </th>
+          <th rowspan='2'>
+            {{localize 'boss-loot-monster-tools.Guidelines.Column.Multiattacks'}}<br />
+          </th>
+          <th rowspan='2'>
+            {{localize 'boss-loot-monster-tools.Guidelines.Column.DPR'}}<br />
+            ({{localize 'boss-loot-monster-tools.Common.InfoOnly'}})
+          </th>
+          <th rowspan='2'>
+            {{localize 'boss-loot-monster-tools.Guidelines.Column.SaveDC'}}<br />
+          </th>
+          <th rowspan='2'>
+            {{localize 'boss-loot-monster-tools.Guidelines.Column.Init'}}<br />
+          </th>
+          <th rowspan='2'>
+            {{localize 'boss-loot-monster-tools.Guidelines.Column.XP'}}<br />
+          </th>
+        </tr>
+        <tr>
+          <th>{{localize 'boss-loot-monster-tools.Guidelines.Column.HPMin'}}</th>
+          <th>{{localize 'boss-loot-monster-tools.Guidelines.Column.HPMax'}}</th>
+          <th>{{localize 'boss-loot-monster-tools.Guidelines.Column.HPAvg'}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each rows as |row idx|}}
+          <tr>
+            <td>
+              <input type='text' name='{{row.cr}}.cr' value='{{row.cr}}' readonly />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.prof' value='{{row.prof}}' step='1' min='0' required readonly />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.abilityBonus' value='{{row.abilityBonus}}' step='1' min='0' required />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.damageDiceStep' value='{{row.damageDiceStep}}' step='0.01' min='0' required />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.ac' value='{{row.ac}}' step='1' min='0' required />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.pubHp.min' value='{{row.pubHp.min}}' step='1' min='0' required />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.pubHp.max' value='{{row.pubHp.max}}' step='1' min='0' required />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.pubHp.avg' value='{{row.pubHp.avg}}' step='1' min='0' required />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.atkBonus' value='{{row.atkBonus}}' step='1' min='0' required readonly />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.multi' value='{{row.multi}}' step='1' min='0' required readonly />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.dpr' value='{{row.dpr}}' step='0.01' min='0' required readonly />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.saveDC' value='{{row.saveDC}}' step='1' min='0' required readonly />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.init' value='{{row.init}}' step='1' min='0' required readonly />
+            </td>
+            <td>
+              <input type='number' name='{{row.cr}}.xp' value='{{row.xp}}' step='1' min='0' required readonly />
+            </td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</form>

@@ -1,0 +1,266 @@
+<form class="blmt-form" autocomplete="off">
+  <header class="blmt-top">
+    <div class="blmt-brand">
+      <div class="blmt-title">{{localize "boss-loot-monster-tools.MonsterTools.Title"}}</div>
+      <div class="blmt-subtitle">{{localize "boss-loot-monster-tools.MonsterTools.Subtitle"}}</div>
+    </div>
+
+    <div class="help-links">
+      <a
+        href="https://www.youtube.com/playlist?list=PLsnf4jUWCNpBYs3dClnzqUAn4xQQqqvmQ&amp;playnext=1&amp;index=1"
+        target="_blank"
+        rel="noopener"
+        aria-label="YouTube Help"
+        title="YouTube Help"
+      ><i class="fab fa-youtube"></i></a>
+      <a
+        href="https://discord.gg/Cg8WEDbCua"
+        target="_blank"
+        rel="noopener"
+        aria-label="Discord Help"
+        title="Discord Help"
+      >
+        <i class="fab fa-discord"></i>
+      </a>
+      <a
+        href="https://www.patreon.com/BossLoot"
+        target="_blank"
+        rel="noopener"
+        aria-label="Patreon"
+        title="Patreon"
+      >
+        <i class="fa-brands fa-patreon"></i>
+      </a>
+    </div>
+
+    <div class="blmt-targets">
+      <div>
+        <strong>{{localize "boss-loot-monster-tools.MonsterTools.SelectedTokens"}}:</strong>
+        {{tokenCount}}
+      </div>
+      {{#if tokenPortraits.length}}
+        <div class="blmt-token-portraits">
+          {{#each tokenPortraits as |token|}}
+            <img
+              class="blmt-token-portrait"
+              src="{{token.img}}"
+              alt="{{token.name}}"
+              title="{{token.name}}"
+            >
+          {{/each}}
+        </div>
+      {{/if}}
+      <div class="blmt-names">{{tokenNames}}</div>
+      {{#if selectionHint}}
+        <div class="blmt-help">{{selectionHint}}</div>
+      {{/if}}
+    </div>
+
+    <div class="blmt-row blmt-row-cr">
+      <label>{{localize "boss-loot-monster-tools.MonsterTools.NewCR"}}</label>
+      <select name="targetCR">
+        {{#each crOptions as |cr|}}
+          <option
+            value="{{cr}}"
+            {{#if (eq cr ../chosenCr)}}selected{{/if}}
+            {{#if (lookup ../disabledCrOptions cr)}}disabled{{/if}}
+            {{#if (lookup ../currentCrDropdown cr)}}data-current="true"{{/if}}
+          >
+            {{cr}}
+          </option>
+        {{/each}}
+      </select>
+      <label class="blmt-check blmt-inline-check">
+        <input type="checkbox" name="limitCrSteps" {{#if limitCrSteps}}checked{{/if}}>
+        <span
+          class="blmt-tooltip"
+          data-tooltip="{{localize "boss-loot-monster-tools.MonsterTools.LimitCRChangeTooltip"}}"
+        >{{localize "boss-loot-monster-tools.MonsterTools.LimitCRChange"}}</span>
+      </label>
+    </div>
+
+    <div class="blmt-row">
+      <label>{{localize "boss-loot-monster-tools.MonsterTools.NewName"}}</label>
+      <input
+        type="text"
+        name="actorName"
+        value="{{newActorName}}"
+        placeholder="{{newTokenNamePlaceholder}}"
+      >
+    </div>
+  </header>
+
+  <hr/>
+
+  <section class="blmt-grid">
+    <div class="blmt-card">
+      <h3>{{localize "boss-loot-monster-tools.MonsterTools.Defensive"}}</h3>
+
+      <label class="blmt-check">
+        <input type="checkbox" name="applyAC" {{#if applyAC}}checked{{/if}}>
+        {{localize "boss-loot-monster-tools.MonsterTools.AdjustAC"}}
+      </label>
+      <label class="blmt-check">
+        <input type="checkbox" name="applyHP" {{#if applyHP}}checked{{/if}}>
+        {{localize "boss-loot-monster-tools.MonsterTools.AdjustHP"}}
+      </label>
+
+      <div class="blmt-subgroup">
+        <div class="blmt-subhead">{{localize "boss-loot-monster-tools.MonsterTools.HPMode"}}</div>
+        <div
+          class="blmt-segmented"
+          role="group"
+          aria-label="{{localize "boss-loot-monster-tools.MonsterTools.HPMode"}}"
+        >
+          <input
+            class="blmt-segmented-input"
+            type="radio"
+            name="hpMode"
+            id="blmt-hp-avg"
+            value="avg"
+            {{#if (eq hpMode "avg")}}checked{{/if}}
+          >
+          <label class="blmt-segmented-label" for="blmt-hp-avg">
+            {{localize "boss-loot-monster-tools.MonsterTools.HPModeAvg"}}
+          </label>
+
+          <input
+            class="blmt-segmented-input"
+            type="radio"
+            name="hpMode"
+            id="blmt-hp-min"
+            value="min"
+            {{#if (eq hpMode "min")}}checked{{/if}}
+          >
+          <label class="blmt-segmented-label" for="blmt-hp-min">
+            {{localize "boss-loot-monster-tools.MonsterTools.HPModeMin"}}
+          </label>
+
+          <input
+            class="blmt-segmented-input"
+            type="radio"
+            name="hpMode"
+            id="blmt-hp-max"
+            value="max"
+            {{#if (eq hpMode "max")}}checked{{/if}}
+          >
+          <label class="blmt-segmented-label" for="blmt-hp-max">
+            {{localize "boss-loot-monster-tools.MonsterTools.HPModeMax"}}
+          </label>
+
+          <input
+            class="blmt-segmented-input"
+            type="radio"
+            name="hpMode"
+            id="blmt-hp-random"
+            value="random"
+            {{#if (eq hpMode "random")}}checked{{/if}}
+          >
+          <label class="blmt-segmented-label" for="blmt-hp-random">
+            {{localize "boss-loot-monster-tools.MonsterTools.HPModeRandom"}}
+          </label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="blmt-card">
+      <h3>{{localize "boss-loot-monster-tools.MonsterTools.Offensive"}}</h3>
+
+      <label class="blmt-check">
+        <input type="checkbox" name="applyAbilities" {{#if applyAbilities}}checked{{/if}}>
+        {{localize "boss-loot-monster-tools.MonsterTools.AdjustAbilities"}}
+      </label>
+
+      <label class="blmt-check">
+        <input type="checkbox" name="scaleDamageDice" {{#if scaleDamageDice}}checked{{/if}}>
+        {{localize "boss-loot-monster-tools.MonsterTools.AdjustDamageDice"}}
+      </label>
+
+      <label class="blmt-check">
+        <input type="checkbox" name="scaleInitiative" {{#if scaleInitiative}}checked{{/if}}>
+        {{localize "boss-loot-monster-tools.MonsterTools.AdjustInitiative"}}
+      </label>
+    </div>
+  </section>
+
+  <hr/>
+
+  <section class="blmt-preview">
+    <h3>{{localize "boss-loot-monster-tools.MonsterTools.PreviewTitle" cr=chosenCr}}</h3>
+    <div class="blmt-help">{{localize "boss-loot-monster-tools.MonsterTools.PreviewHint"}}</div>
+
+    <div class="blmt-preview-groups">
+      <div class="blmt-preview-group">
+        <div class="blmt-preview-grid">
+          <div>
+            <strong>
+              <span
+                class="blmt-tooltip"
+                data-tooltip="{{localize "boss-loot-monster-tools.MonsterTools.AbilityScoresTooltip"}}"
+              >{{localize "boss-loot-monster-tools.MonsterTools.AbilityScores"}}</span>:
+            </strong>
+            {{abilityDeltaDisplay}}
+            <input type='hidden' name='updates.abilityDeltaDisplay' value='{{abilityDeltaDisplay}}' />
+          </div>
+          <div>
+            <strong>
+              <span
+                class="blmt-tooltip"
+                data-tooltip="{{localize "boss-loot-monster-tools.MonsterTools.DamageDiceScaleTooltip"}}"
+              >{{localize "boss-loot-monster-tools.MonsterTools.DamageDiceScale"}}</span>:
+            </strong>
+            {{damageDeltaDisplay}}
+            <input type='hidden' name='updates.damageDeltaDisplay' value='{{damageDeltaDisplay}}' />
+          </div>
+          <div><strong>{{localize "boss-loot-monster-tools.MonsterTools.ACLabel"}}:</strong> 
+            {{crData.ac}}
+            <input type='hidden' name='updates.ac' value='{{crData.ac}}' />
+          </div>
+          <div>
+            <strong>{{localize "boss-loot-monster-tools.MonsterTools.HPPreviewLabel"}}:</strong>
+            {{targetPubHp}}
+            <input type='hidden' name='updates.hp' value='{{targetPubHp}}' />
+          </div>
+          <div><strong>{{localize "boss-loot-monster-tools.MonsterTools.ProfLabel"}}:</strong>
+            +{{crData.prof}}
+            <input type='hidden' name='updates.prof' value='{{crData.prof}}' />
+          </div>
+          <div><strong>{{localize "boss-loot-monster-tools.MonsterTools.SaveDCLabel"}}:</strong>
+            {{crData.saveDC}}
+            <input type='hidden' name='updates.saveDC' value='{{crData.saveDC}}' />
+          </div>
+          <div><strong>{{localize "boss-loot-monster-tools.MonsterTools.AtkBonusLabel"}}:</strong>
+            +{{crData.atkBonus}}
+            <input type='hidden' name='updates.atkBonus' value='{{crData.atkBonus}}' />
+          </div>
+          <div><strong>{{localize "boss-loot-monster-tools.MonsterTools.XPLabel"}}:</strong>
+            {{crData.xp}}
+            <input type='hidden' name='updates.xp' value='{{crData.xp}}' />
+          </div>
+          <div><strong>{{localize "boss-loot-monster-tools.MonsterTools.InitiativeLabel"}}:</strong>
+            +{{crData.init}}
+            <input type='hidden' name='updates.init' value='{{crData.init}}' />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr/>
+
+  <footer class="blmt-footer">
+    <button type="button" data-action="openGuidelines">
+      <i class="fas fa-table"></i> {{localize "boss-loot-monster-tools.MonsterTools.GuidelinesTableButton"}}
+    </button>
+    <button type="submit" data-action="apply">
+      <i class="fas fa-check"></i> {{localize "boss-loot-monster-tools.MonsterTools.ApplyButton"}}
+    </button>
+    <button type="submit" data-action="revert">
+      <i class="fas fa-undo"></i> {{localize "boss-loot-monster-tools.MonsterTools.RevertButton"}}
+    </button>
+    <button type="submit" data-action="actor" {{#unless canCreateActor}}disabled{{/unless}}>
+      <i class="fas fa-user"></i> {{localize "boss-loot-monster-tools.MonsterTools.CreateButton"}}
+    </button>
+  </footer>
+</form>

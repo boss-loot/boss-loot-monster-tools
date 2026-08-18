@@ -1,0 +1,263 @@
+.blmt-form .blmt-names {
+  opacity: 0.85;
+  font-size: 12px;
+  margin-top: 4px;
+}
+.blmt-form .blmt-targets {
+  display: grid;
+  gap: 2px;
+}
+.blmt-form .blmt-token-portraits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 2px;
+}
+.blmt-form .blmt-token-portrait {
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--color-border-light-2);
+}
+.blmt-form .blmt-row {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0;
+}
+.blmt-form .blmt-row-cr {
+  grid-template-columns: 110px 1fr auto;
+  gap: 10px;
+}
+.blmt-form .blmt-inline-check {
+  white-space: nowrap;
+  margin: 0;
+}
+.blmt-form select {
+  width: 100%;
+  max-width: 100%;
+}
+.blmt-form select option[data-current='true'] {
+  background: var(--color-border-light-2);
+  font-weight: 600;
+}
+.blmt-form input[type='text'] {
+  width: 100%;
+  max-width: 100%;
+}
+.blmt-form .blmt-check {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 6px 0;
+}
+.blmt-form .blmt-subgroup {
+  margin: 6px 0 8px;
+}
+.blmt-form .blmt-subhead {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  opacity: 0.85;
+}
+.blmt-form .blmt-segmented {
+  display: inline-flex;
+  border: 1px solid var(--color-border-light-2);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.blmt-form .blmt-segmented-input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.blmt-form .blmt-segmented-label {
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  border-right: 1px solid var(--color-border-light-2);
+}
+.blmt-form .blmt-segmented-label:last-of-type {
+  border-right: none;
+}
+.blmt-form .blmt-segmented-input:checked + .blmt-segmented-label {
+  background: var(--color-border-light-2);
+  font-weight: 600;
+}
+.blmt-form .blmt-help {
+  font-size: 12px;
+  opacity: 0.8;
+  margin: 4px 0 6px;
+}
+.blmt-form .blmt-muted {
+  opacity: 0.7;
+  font-size: 12px;
+}
+
+.blmt-form .blmt-top {
+  display: grid;
+  gap: 8px;
+  position: relative;
+}
+.blmt-form .blmt-brand {
+  display: grid;
+  gap: 2px;
+}
+.blmt-form .blmt-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+}
+.blmt-form .blmt-subtitle {
+  font-size: 12px;
+  opacity: 0.85;
+  text-align: center;
+}
+.blmt-form .help-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.blmt-form .help-links a {
+  align-items: center;
+  display: flex;
+  justify-content: right;
+  text-decoration: none;
+  width: 28px;
+}
+.blmt-form .help-links a:hover,
+.blmt-form .help-links a:focus {
+  color: #eb4c4c;
+}
+
+.blmt-form .blmt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.blmt-form .blmt-card {
+  border: 1px solid var(--color-border-light-2);
+  border-radius: 8px;
+  padding: 10px;
+}
+.blmt-form .blmt-card h3 {
+  margin: 0 0 8px;
+}
+
+.blmt-form .blmt-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px 12px;
+}
+.blmt-form .blmt-preview-groups {
+  display: grid;
+  gap: 10px;
+}
+.blmt-form .blmt-preview-group {
+  border: 1px solid var(--color-border-light-2);
+  border-radius: 6px;
+  padding: 8px;
+}
+.blmt-tooltip {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-underline-offset: 2px;
+}
+
+.blmt-form .blmt-footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.blmt-form .blmt-notes {
+  font-size: 12px;
+  opacity: 0.85;
+  margin-top: 8px;
+}
+
+.blmt-guidelines-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100%;
+  font-size: 11px;
+}
+.blmt-guidelines-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+}
+.blmt-guidelines-title {
+  display: grid;
+  gap: 1px;
+}
+.blmt-guidelines-name {
+  font-size: 14px;
+  font-weight: 700;
+}
+.blmt-guidelines-subtitle {
+  font-size: 12px;
+  opacity: 0.85;
+}
+.blmt-guidelines-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.blmt-guidelines-note {
+  margin-left: auto;
+}
+.blmt-guidelines-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--color-border-light-2);
+  border-radius: 6px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+.blmt-guidelines-table {
+  border-collapse: collapse;
+  width: max-content;
+  min-width: 100%;
+}
+.blmt-guidelines-table th,
+.blmt-guidelines-table td {
+  border: 1px solid var(--color-border-light-2);
+  padding: 2px 4px;
+  text-align: center;
+  line-height: 1.1;
+}
+.blmt-guidelines-table input {
+  width: 54px;
+  text-align: center;
+  padding: 1px 2px;
+  font-size: 11px;
+  height: 20px;
+}
+.blmt-guidelines-table input[readonly] {
+  border-color: transparent;
+  background: transparent;
+  font-weight: 600;
+  outline: none;
+}
+.blmt-guidelines-actions button {
+  padding: 2px 6px;
+  font-size: 12px;
+  width: 160px;
+  height: 24px;
+  white-space: nowrap;
+}
+.blmt-guidelines-note button {
+  padding: 2px 6px;
+  font-size: 12px;
+  width: 140px;
+  height: 24px;
+  white-space: nowrap;
+}
