@@ -5,9 +5,12 @@
 ![Downloads Latest Version](https://img.shields.io/github/downloads/boss-loot/boss-loot-monster-tools/latest/boss-loot-monster-tools.zip)
 [![Boss Loot Discord Invite](https://img.shields.io/discord/1077169903297110076?color=%237289DA&label=chat&logo=discord&logoColor=white)](https://discord.gg/Cg8WEDbCua)
 
-<a href="https://www.patreon.com/BossLoot" target="_blank">
-    <img src="https://github.com/boss-loot/Boss-Loot-Interactive-Magic-Items/blob/main/artwork/000-logo/follow-us-on-patreon-icon.jpg" alt="Support on Patreon" width="217" height="51">
-</a>
+<table>
+  <tr>
+    <td><img src="https://github.com/user-attachments/assets/dc8ba696-af35-43e5-80fd-6b59dee968ca" alt="Logo" width="64"/></td>
+    <td><font size="6">Support us on Patreon</b></font></td>
+  </tr>
+</table>
 
 
 <img width="1280" height="720" alt="Monster Tools Thumbnail FHD 1" src="https://github.com/user-attachments/assets/65179643-8d03-4c4e-a42a-d8755c239f22" />
