@@ -7,8 +7,7 @@
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/dc8ba696-af35-43e5-80fd-6b59dee968ca" alt="Logo" width="64"/></td>
-    <td><font size="6">Support us on Patreon</b></font></td>
+    <td><img width="192" height="39" alt="Patreon-Logo" src="https://github.com/user-attachments/assets/4a79b2d0-b8fc-47b9-95c5-0dfdf9bdd402" /></td>
   </tr>
 </table>
 
