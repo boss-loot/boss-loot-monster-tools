@@ -7,7 +7,7 @@
 
 <table>
   <tr>
-    <td><img width="192" height="39" alt="Patreon-Logo" src="https://github.com/user-attachments/assets/4a79b2d0-b8fc-47b9-95c5-0dfdf9bdd402" /></td>
+    <td><img width="217" height="51" alt="Patreon-Logo" src="https://github.com/user-attachments/assets/3ef78912-13e7-4cec-9250-e7c2bab0fb8b" /></td>
   </tr>
 </table>
 
