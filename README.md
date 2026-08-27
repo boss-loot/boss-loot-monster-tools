@@ -5,9 +5,11 @@
 ![Downloads Latest Version](https://img.shields.io/github/downloads/boss-loot/boss-loot-monster-tools/latest/boss-loot-monster-tools.zip)
 [![Boss Loot Discord Invite](https://img.shields.io/discord/1077169903297110076?color=%237289DA&label=chat&logo=discord&logoColor=white)](https://discord.gg/Cg8WEDbCua)
 
-  <tr>
-    <td><a href="https://www.patreon.com/BossLoot" target="_blank"><img width="217" height="51" alt="Patreon-Logo" src="https://github.com/user-attachments/assets/b0723fbe-60fa-4b2f-a199-7ba0c6191b29" /></td>
-  </tr>
+<tr>
+  <td>
+    <a href="https://www.patreon.com/BossLoot" target="_blank"><img width="217" height="51" alt="Patreon Logo" src="https://github.com/user-attachments/assets/b0723fbe-60fa-4b2f-a199-7ba0c6191b29" /></a>
+  </td>
+</tr>
       
 ---
 
@@ -15,7 +17,7 @@
 
 ---
 
-- A free module for Foundry VTT, D&D 5e, that lets you change the CR of any monster or NPC with a single click. It’s one of the most useful quality-of-life modules a GM can have.
+A free module for Foundry VTT, D&D 5e, that lets you change the CR of any monster or NPC with a single click. It’s one of the most useful quality-of-life modules a GM can have.
 
 ## Features
 - Change CR with one click
